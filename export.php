@@ -10,7 +10,7 @@ $selectData = "SELECT * FROM $table";
 $retrieve = mysqli_query($conn, $selectData);
 
 header("Content-Type: application/vnd.ms-excel");
-// this method of header() handle some content that will be sent ot the browser
+// this method of header() handle some content that will be sent to the browser
 // Content-Type => this explain the type of data we are sending to our browser to be downloaded later
 // aplication/vdn.ms-excel => this tell browser that it is microsoft excel we are sending 
 header("Content-Disposition: attachement; filename={$table}_holiday.xls");
@@ -38,7 +38,7 @@ foreach($DbField as $field) {
 
 }
 echo "\n"; // mn iyi "\n" ikora nka <br> yoyo ivuga new line
-while($rows = mysqli_fetch_assoc($retrieve)) { // iyi line i getting data as key and value ex $rows = [1, 'nathan', 122];
+while($rows = mysqli_fetch_assoc($retrieve)) { // iyi line i getting data as key and value ex $rows = [id:1, name:'nathan', password:122];
    // nikuriya i gettinga data
     echo implode("\t", $rows). "\n"; // iyi line iraza gufata za data izishire muri tab zitandukanye muri excel 
     // noneho implode() iy method yoyo ira joining mn buri data iyishyira muri tab yayo nkuko twabikoze kuri column
